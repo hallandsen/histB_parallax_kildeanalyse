@@ -1,0 +1,38 @@
+/******************************************************************************************************
+		Forneden er der nogle justeringer der får boilerplaten til at ligne MAMs design.
+******************************************************************************************************/
+
+h1 {
+	margin: 40px 0px; 
+	line-height: 1em;
+}
+h2 {
+	margin: 30px 0px 20px 0px; 
+	line-height: 1em;
+}
+h4 {
+	margin: 0px; 
+	line-height: 1em;
+}
+.scene {
+	height:400px;
+	margin: 0px;
+	background-color:white;
+	border-bottom: black solid 1px;
+}
+#brick1 {
+	width:10%;
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+}
+#brick2 {
+	width:10%;	
+	float: right;
+}
+.st0{
+	fill:blue;
+}
+.color-transistion-1s {
+	transition: fill 0.5s ease;
+}
