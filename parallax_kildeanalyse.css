@@ -1,9 +1,19 @@
 /******************************************************************************************************
 		Forneden er der nogle justeringer der får boilerplaten til at ligne MAMs design.
 ******************************************************************************************************/
+html,body {
+
+	height:100%;
+	width:100%;
+	background-color: #363636;
+}
 .container-fluid {
 	background-color: #363636;
-	color:white;
+	color:#FBEFB3;
+	height:100%;
+
+	padding:0;
+
 }
 h1 {
 	margin: 40px 0px; 
@@ -16,30 +26,59 @@ h2 {
 h4 {
 	margin: 0px; 
 	line-height: 1em;
-	color:white;
+	color:#FBEFB3;
+}
+.col-xs-12 {
+	height: 100%;
+	width:100%;
+	margin:0;
+}
+.header {
+	padding:0 30px;
 }
 .scene {
-	height:400px;
+	height:100%;
 	margin: 0px;
 	background-color: #363636;
 	border-bottom: black solid 1px;
+	padding:0 30px;
 }
-#brick1 {
+.brick {
 	width:10%;
+}
+#brick1{
 	display: block;
 	margin-left:auto;
 	margin-right:auto;
 }
-#brick2 {
-	width:10%;	
-	float: left;
+
+#brick21 {
+	display: inline-block;
+	float:right;
+	margin-right:40%;
+}
+#brick22 {
+	display: inline-block;
+	float:left;
 }
 .st0{
-	fill:blue;
+	fill:#69C6AB;
 }
 .color-transistion-1s {
 	transition: fill 0.5s ease;
 }
-p {
-	color:black;
+.source-number {
+	color:#FBEFB3;
+	display: inline-block;
+	font-size: 30em;
+	line-height: 0.7em;
+	vertical-align: top;
 }
+.source-explanation {
+	margin:5%;
+	vertical-align: middle;
+	width: 70%;
+	max-width: 700px;
+	float:right;
+}
+
