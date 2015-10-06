@@ -11,105 +11,178 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	</head>
 	<body>
-		<div class="container-fluid"> 
-        
-                <div class="header">
-                    <h1>Kildekritik</h1>
-                    <h4>Scroll op og ned</h4>
-                </div>
-                
+		<div class="container-fluid">     
                 <div class="col-xs-12">
         
-                        <div class="scene" id="scene-1">
-                            <p>scene 1</p>
-                        </div>
-                        <div class="scene" id="scene-2">
-                            <p>scene 2</p>
-                            <!-- første puslebrik -->
+                        <div class="scene" id="scene-intro-1">
+                            <p>scene intro: 1</p>
+                            <div id="intro-container-1">    
+                                <h4>Scroll op og ned</h4>
+                                <h1>Hvad er kildeanalyse?</h1>
+                            
+                            
+                            <!-- pil op -->
+                                <svg version="1.1" class="arrows" id="arrow-up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"viewBox="0 0 48 48" xml:space="preserve" enable-background="new 0 0 48 48">
+                                  <g id="glyphicons">
+                                    <g id="circle-arrow-top">
+                                      <path d="M24.94 36.13c6.73 0 12.19-5.46 12.19-12.19S31.67 11.75 24.94 11.75 12.75 17.21 12.75 23.94 18.21 36.13 24.94 36.13zM23.5 30c-0.28 0-0.5-0.22-0.5-0.5V24h-3.53c-0.28 0-0.35-0.17-0.17-0.38l5.38-6.24c0.18-0.21 0.47-0.21 0.65 0l5.35 6.24C30.85 23.83 30.78 24 30.5 24H27v5.5c0 0.28-0.22 0.5-0.5 0.5H23.5z"/>
+                                    </g>
+                                  </g>
+                                  <g id="Layer_2"/>
+                                </svg>
                                 
+                                <!-- pil ned -->
+                                <svg version="1.1" class="arrows" id="arrow-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 48 48" xml:space="preserve" enable-background="new 0 0 48 48">
+                                    <g id="glyphicons">
+                                        <g id="circle-arrow-down">
+                                            <path d="M11.75 23.94c0 6.73 5.46 12.19 12.19 12.19s12.19-5.46 12.19-12.19S30.67 11.75 23.94 11.75 11.75 17.21 11.75 23.94zM25.5 18c0.28 0 0.5 0.23 0.5 0.5V24h3.5c0.28 0 0.35 0.17 0.18 0.38l-5.35 6.24c-0.18 0.21-0.47 0.21-0.65 0l-5.38-6.24C18.11 24.17 18.19 24 18.47 24H22v-5.5c0-0.28 0.23-0.5 0.5-0.5H25.5z"/>
+                                            </g>
+                                        </g>
+                                    <g id="Layer_2"/>
+                                </svg>
+                            </div>
+
+                        </div>
+
+                        <div class="scene" id="scene-intro-2">
+                            <p>scene intro: 2</p>
+                            <div class="left"></div>
+                            <div class="right"></div>
+                        </div>
+
+                        <div class="scene" id="scene-intro-3">
+                            <p>scene intro: 3</p>
+                            <div class="left">
+                                <div id="intro-container-2">
+                                    <p>DU SKAL <br>LÆRE EN <br>METODE</p>
+                                </div>
+                            </div>
+                            <div class="right"></div>
+                        </div>
+
+                    <div class="scene" id="scene-intro-4">
+                            <p>scene intro: 2</p>
+                            <div class="left"></div>
+                            <div class="right">
+                                <div id="intro-container-3">
+                                    <p>Du skal undersøge en sammensat helhedsbestanddele</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="scene" id="scene-intro-5">
+                            <p>scene intro: 2</p>
+                            <div class="left"></div>
+                            <div class="right"></div>
+                        </div>
+
+                        <div class="scene" id="scene-1">
+                            <p>No. 1</p>
+                        </div>
+                        
+                        <div class="scene" id="scene-2">
+                            <p>No. 2</p>
+                            <div class="left">    
                                 <div class="source-number" id="no-1">
                                     <p>1</p>
                                 </div>
+                            </div>
+
+                            <div class="right">
+                                <div class="source-question " id='quest-1'>
+                                    <p>HVEM?</p>
+                                </div>
+                            </div>
 
                         </div>
 
                         <div class="scene" id="scene-3">
-                            <p>scene 3</p>
-                            <div id="expl-container-1">
-                                <div class="source-explanation">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque neque in assumenda tempora quo expedita laudantium sint ratione architecto, dignissimos, adipisci totam vel corporis voluptatem fugiat voluptas, cupiditate harum quia?
+                            <p>No. 3</p>
+                            <div class="left"></div>
+                            <div class="right">
+                                <div id="expl-container-1">
+                                    <div class="source-explanation">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque neque in assumenda tempora quo expedita laudantium sint ratione architecto, dignissimos, adipisci totam vel corporis voluptatem fugiat voluptas, cupiditate harum quia?
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="scene" id="scene-4">
-                            <p>scene 4</p>
-
-                            <svg class="brick" id="brick1" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 199 203" xml:space="preserve" enable-background="new 0 0 199 203">
-                                    <path id="midte" class="color-transistion-1s st0" d="M0 0l159.4 0v58.1c0 0 39.2-15.1 39.2 23.4 0 41.5-39.2 24.6-39.2 24.6v55H105c0 0 18.3 41.1-23.5 41.1 -40 0-24.5-41.1-24.5-41.1H0l0-56.2c0 0 43 15.8 43-23.7 0-41.8-43-26-43-26L0 0z"/>
-                            </svg>
-                        </div>
-
-                        <div class="scene" id="scene-5">
-                            <p>scene 5</p>
+                            <p>No. 4</p>
                             
-                            <div class="source-number" id="no-2">
-                                    <p>2</p>
-                                </div>
-
-                            <!-- anden puslebrik -->
-                            <!-- <div id="pinned-container-2">
-                                <svg id="brick2" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                     viewBox="0 0 203 160" style="enable-background:new 0 0 203 160;" xml:space="preserve">
-
-                                <path class="st0" d="M0-0.3h161.5v56c0,0,41.5-13.6,41.5,23c0,41.5-41.5,25-41.5,25v55.9H105c0,0,18.3-39.2-23.5-39.2
-                                    c-40,0-24.5,39.2-24.5,39.2H0V-0.3z"/>
+                            <div class="left"></div>
+                            <div class="right">
+                                <svg class="brick" id="brick1" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 199 203" xml:space="preserve" enable-background="new 0 0 199 203">
+                                        <path id="midte" class="color-transistion-1s st0" d="M0 0l159.4 0v58.1c0 0 39.2-15.1 39.2 23.4 0 41.5-39.2 24.6-39.2 24.6v55H105c0 0 18.3 41.1-23.5 41.1 -40 0-24.5-41.1-24.5-41.1H0l0-56.2c0 0 43 15.8 43-23.7 0-41.8-43-26-43-26L0 0z"/>
                                 </svg>
-                            </div> -->
-                        </div>
-
-                        <div class="scene" id="scene-6">
-                            <p>scene 6</p>
-                            <div id="expl-container-2">
-                                <div class="source-explanation">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque neque in assumenda tempora quo expedita laudantium sint ratione architecto, dignissimos, adipisci totam vel corporis voluptatem fugiat voluptas, cupiditate harum quia?
-                                </div>
                             </div>
                         </div>
 
-                        <div class="scene" id="scene-7">
-                            <p>scene 7</p>
+                        <div class="scene" id="scene-5">
+                            <p>No. 5</p>
                             
-                            <div id="brick-container-no-2">
-                            <!-- BRICK 2 -->
-                                <svg class="brick" id="brick22" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                     viewBox="0 0 203 160" style="enable-background:new 0 0 203 160;" xml:space="preserve">
-                                <path class="st0" d="M0-0.3h161.5v56c0,0,41.5-13.6,41.5,23c0,41.5-41.5,25-41.5,25v55.9H105c0,0,18.3-39.2-23.5-39.2
-                                    c-40,0-24.5,39.2-24.5,39.2H0V-0.3z"/>
-                                </svg>
+                            <div class="left">
+                                <div class="source-number" id="no-2">
+                                    <p>2</p>
+                                </div>
+                            </div>
+                            <div class="right"></div>
 
-                                <!-- BRICK 1 -->
-                                <svg class="brick" id="brick21" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 199 203" xml:space="preserve" enable-background="new 0 0 199 203">
-                                        <path id="midte" class="color-transistion-1s st0" d="M0 0l159.4 0v58.1c0 0 39.2-15.1 39.2 23.4 0 41.5-39.2 24.6-39.2 24.6v55H105c0 0 18.3 41.1-23.5 41.1 -40 0-24.5-41.1-24.5-41.1H0l0-56.2c0 0 43 15.8 43-23.7 0-41.8-43-26-43-26L0 0z"/>
-                                </svg>
+                        </div>
+
+                        <div class="scene" id="scene-6">
+                            <p>No. 6</p>
+                            <div class="left"></div>
+                            <div class="right">
+                                <div id="expl-container-2">
+                                    <div class="source-explanation">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque neque in assumenda tempora quo expedita laudantium sint ratione architecto, dignissimos, adipisci totam vel corporis voluptatem fugiat voluptas, cupiditate harum quia?
+                                    </div>
+                                </div>
+                            </div>
+                                
+                        </div>
+
+                        <div class="scene" id="scene-7">
+                            <p>No. 7</p>
+                           
+                            <div id="brick-container-no-2">
+                                <div class="left">
+                                <!-- BRICK 2 -->
+                                    <svg class="brick" id="brick22" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                         viewBox="0 0 203 160" style="enable-background:new 0 0 203 160;" xml:space="preserve">
+                                    <path class="st0" id="svg-clr" d="M0-0.3h161.5v56c0,0,41.5-13.6,41.5,23c0,41.5-41.5,25-41.5,25v55.9H105c0,0,18.3-39.2-23.5-39.2
+                                        c-40,0-24.5,39.2-24.5,39.2H0V-0.3z"/>
+                                    </svg>
+                                </div>
+
+                                <div class="right">
+                                    <!-- BRICK 1 -->
+                                    <svg class="brick" id="brick21" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 199 203" xml:space="preserve" enable-background="new 0 0 199 203">
+                                            <path id="midte" class="color-transistion-1s st0" d="M0 0l159.4 0v58.1c0 0 39.2-15.1 39.2 23.4 0 41.5-39.2 24.6-39.2 24.6v55H105c0 0 18.3 41.1-23.5 41.1 -40 0-24.5-41.1-24.5-41.1H0l0-56.2c0 0 43 15.8 43-23.7 0-41.8-43-26-43-26L0 0z"/>
+                                    </svg>
+                                </div>
                             </div>
 
                         </div>
 
                         <div class="scene" id="scene-8">
-                            <p>scene 8</p>
+                            <p>No. 8</p>
+
+
                         </div>
 
                         <div class="scene" id="scene-9">
-                            <p>scene 9</p>
+                            <p>No. 9</p>
                         </div>
 
                         <div class="scene" id="scene-10">
-                            <p>scene 10</p>
+                            <p>No. 10</p>
                         </div>
 
                         <div class="scene" id="scene-11">
-                            <p>scene 11</p>
+                            <p>No. 11</p>
                         </div>
 
             </div>

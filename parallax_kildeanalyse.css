@@ -1,8 +1,4 @@
-/******************************************************************************************************
-		Forneden er der nogle justeringer der får boilerplaten til at ligne MAMs design.
-******************************************************************************************************/
 html,body {
-
 	height:100%;
 	width:100%;
 	background-color: #363636;
@@ -11,9 +7,8 @@ html,body {
 	background-color: #363636;
 	color:#FBEFB3;
 	height:100%;
-
+	max-width: 100%;
 	padding:0;
-
 }
 h1 {
 	margin: 40px 0px; 
@@ -33,33 +28,84 @@ h4 {
 	width:100%;
 	margin:0;
 }
-.header {
-	padding:0 30px;
-}
+
 .scene {
 	height:100%;
 	margin: 0px;
-	background-color: #363636;
 	border-bottom: black solid 1px;
 	padding:0 30px;
 }
-.brick {
+
+.left {
+	float:left;
+	width:50%;
+	height:100%;
+}
+.right {
+	float:right;
+	width:50%;
+	height: 100%;
+}
+
+#glyphicons {
+	fill:white;
 	width:10%;
 }
-#brick1{
+
+.arrows {
+	width:10%;
 	display: block;
-	margin-left:auto;
-	margin-right:auto;
+	margin:0 auto;
+	opacity: 1;
+}
+
+#scene-intro-1 {
+	padding:0 30px;
+}
+
+#scene-intro-1 h1 {
+	font-size:6em;
+}
+
+#scene-intro-1 h4 {
+	font-size: 3em;
+	color:white;
+	opacity: 1;
+}
+
+#intro-container-2 {
+	font-size:4.5em;
+	opacity: 0;
+	width:100%;
+	line-height: 1.2;
+}
+
+#intro-container-2 p {
+	margin-left: 20%;
+}
+
+
+
+#quest-1 {
+	opacity: 0;
+}
+
+.brick {
+	width:120px;
+}
+#brick1{
+	display: inline-block;
+	float:left;
 }
 
 #brick21 {
 	display: inline-block;
-	float:right;
-	margin-right:40%;
+	float:left;
+
 }
 #brick22 {
 	display: inline-block;
-	float:left;
+	margin-right: -4%;
 }
 .st0{
 	fill:#69C6AB;
@@ -74,11 +120,11 @@ h4 {
 	line-height: 0.7em;
 	vertical-align: top;
 }
+.source-question {
+	font-size: 6em;
+	text-align: center;
+}
 .source-explanation {
-	margin:5%;
-	vertical-align: middle;
-	width: 70%;
-	max-width: 700px;
+	width: 100%;
 	float:right;
 }
-
