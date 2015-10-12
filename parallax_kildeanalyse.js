@@ -19,6 +19,7 @@ $(document).ready(function() {
 
 	//intro
 
+	//SCENE 1
 	var timeLineIntro1 = new TimelineMax();
 	timeLineIntro1
 		.to('#scene-intro-1 h4', 1, {opacity : 0, scale: 0.5})
@@ -26,72 +27,169 @@ $(document).ready(function() {
 
 	var timeLineIntro2 = new TimelineMax();
 	timeLineIntro1
-		.to('#intro-container-2', 1, {opacity : 1, scale: 1.5, delay: 3});
+		.from('#intro-container-2', 1, {opacity : 0, scale: 0});
 
+	var timeLineIntro2span = new TimelineMax();
+	timeLineIntro2span
+		.to('#intro-4-span', 1, {opacity:1, ease:Power2.easeIn});
 
 	//scenes
 	var intro1Time = new ScrollMagic.Scene({
 		triggerElement: '#scene-intro-1',
 		triggerHook:'onLeave',
-		duration: $(window).height() + ($(window).height() - 400)
+		duration: '100%'
 	}).setTween(timeLineIntro1);
 
 	var intro1 = new ScrollMagic.Scene({
 		triggerElement: '#scene-intro-1',
 		triggerHook:'onLeave',
-		duration: $(window).height() + ($(window).height() - 800)
+		duration: '50%'
 	}).setPin('#intro-container-1');
+
+	//SCENE 2
 
 	var intro2Time = new ScrollMagic.Scene({
 		triggerElement: '#scene-intro-3',
-		triggerHook:'onLeave',
-		duration: $(window).height() + ($(window).height() - 400)
+		triggerHook: 'onEnter',
+		duration: '100%'
 	}).setTween(timeLineIntro2);
 
 	var intro2 = new ScrollMagic.Scene({
-		triggerElement: '#scene-intro-3',
-		duration: $(window).height() + ($(window).height() - 400)
+		triggerElement: '#intro-container-2',
+		offset: '100',
+		duration: '270%'
 	}).setPin('#intro-container-2');
+
+	var intro2Expl = new ScrollMagic.Scene({
+		triggerElement: '#intro-container-3',
+		duration: '250%',
+		offset: "100"
+	}).setPin('#intro-container-3');
+
+	var intro2ExplfadeIn = new ScrollMagic.Scene({
+		triggerElement: '#scene-intro-5',
+		triggerHook: 'onEnter',
+		duration: '100%'
+	}).setTween(timeLineIntro2span);
 
 	controller.addScene([
 		intro1,intro1Time,
-		intro2, intro2Time
+		intro2, intro2Time, intro2Expl, intro2ExplfadeIn
 	]);
 
-//('#scene-intro-3 .left')
-	//de syv trin
 
-	//section 1
+
+//BRIKKER BEGYNDER
+
+	//Timeslines
+	
+	var brick2FadeIn = new TimelineMax();
+	brick2FadeIn.to('#brick-2', 1, {opacity: 1});
+
+	var brick3FadeIn = new TimelineMax();
+	brick3FadeIn.to('#brick-3', 1, {opacity: 1});
+
+	var brick4FadeIn = new TimelineMax();
+	brick4FadeIn.to('#brick-4', 1, {opacity: 1});
+
+
+	var brikker1 = new ScrollMagic.Scene({
+		triggerElement: '#brick-1',
+		triggerHook:'onLeave',
+		duration: '860%'
+	}).setPin('#brick-1');
+
+	var brikker2 = new ScrollMagic.Scene({
+		triggerElement: '#brick-2',
+		triggerHook:'onLeave',
+		duration: '760%'
+	}).setPin('#brick-2');
+
+	var brikker3 = new ScrollMagic.Scene({
+		triggerElement: '#brick-3',
+		triggerHook:'onLeave',
+		duration: '560%'
+	}).setPin('#brick-3');
+
+	var brikker4 = new ScrollMagic.Scene({
+		triggerElement: '#brick-4',
+		triggerHook:'onLeave',
+		duration: '460%'
+	}).setPin('#brick-4');
+
+	var brikker2Fade = new ScrollMagic.Scene({
+		triggerElement:'#brick-2',
+		offset:'400',
+		duration:'50%'
+	}).setTween(brick2FadeIn);
+
+	var brikker3Fade = new ScrollMagic.Scene({
+		triggerElement:'#brick-3',
+		offset:'400',
+		duration:'50%'
+	}).setTween(brick3FadeIn);
+
+	var brikker4Fade = new ScrollMagic.Scene({
+		triggerElement:'#brick-4',
+		offset:'400',
+		duration:'50%'
+	}).setTween(brick4FadeIn);
+
+
+
+
+	controller.addScene([
+		brikker1,
+		brikker2,brikker2Fade,
+		brikker3,brikker3Fade,
+		brikker4,brikker4Fade
+			]);
+
+
+
+
+//DE 7 TRIN
+
+	//SECTION 1
 
 	//Timeline1
 	var timeLine1 = new TimelineMax();
-	timeLine1
-		.to('#quest-1', 2, {opacity : 1, scale: 1.5})
-		.to('#quest-1', 1.5, {xPercent: -100, delay: 0.2});
+	timeLine1.to('#quest-1', 2.7, {opacity : 1, scale: 1.5});
+		
 
-	//SCENES
+	var timeLine2 = new TimelineMax();
+	timeLine2.to('#quest-1', 5, {xPercent: -110, delay: 4, ease:Power2.easeOut});
+	//scenes
 
 	var scene1 = new ScrollMagic.Scene({
-		triggerElement: '#scene-2',
-		duration: $(window).height() - ($(window).height()/1.5)
+		triggerElement: '#no-1',
+		offset:'100',
+		duration: '30%'
 	}).setPin('#no-1');
 
 	var scene1Time = new ScrollMagic.Scene({
 		triggerElement: '#scene-2',
-	 	duration: $(window).height()
+	 	duration: '100%'
 	}).setTween(timeLine1);
 
-	var scene1Quest = new ScrollMagic.Scene({
+	var scene1Time2 = new ScrollMagic.Scene({
 		triggerElement: '#scene-2',
-	 	duration: $(window).height() + ($(window).height() - 400)
+	 	duration: '100%'
+	}).setTween(timeLine2);
+
+	var scene1Quest = new ScrollMagic.Scene({
+		triggerElement: '#quest-1',
+		offset:'100',
+	 	duration: '170%'
 	}).setPin('#quest-1');
 
-	//section2
+	//SECTION 2
 
 	var scene2 = new ScrollMagic.Scene({
 		triggerElement: '#scene-3',
-		duration: $(window).height() - 400
+		duration: '70%'
 	}).setPin('#expl-container-1');
+	
 
 	var scene3 = new ScrollMagic.Scene({
 		triggerElement: '#scene-4',
@@ -101,7 +199,7 @@ $(document).ready(function() {
 	//sectionX
 	var scene4 = new ScrollMagic.Scene({
 		triggerElement: '#scene-5',
-		duration: $(window).height() + ($(window).height()-400)
+		duration: '170%'
 	}).setPin('#no-2');
 
 	var scene5 = new ScrollMagic.Scene({
@@ -127,6 +225,7 @@ $(document).ready(function() {
 		scene1,
 		scene1Quest,
 		scene1Time,
+		scene1Time2,
 		scene2,
 		scene3,
 		scene4,
