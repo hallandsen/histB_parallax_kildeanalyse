@@ -35,8 +35,8 @@ h4 {
 	height:100%;
 	width:100%;
 	margin: 0px;
-/*	border-bottom: black solid 1px;
-*/	padding:0 30px;
+	border-bottom: black solid 1px;
+	padding:0 30px;
 }
 
 .left {
@@ -180,13 +180,24 @@ h4 {
 	text-align: center;
 	color:white;
 }
-#quest-1, #quest-2, #quest-3, #quest-4 {
+#quest-1, #quest-2, #quest-3, #quest-4, #quest-5, #quest-6, #quest-7  {
 	opacity: 0;
 }
 #quest-3 {
-	font-size: 5em;
+	font-size: 5.5em;
+}
+#quest-6 {
+	font-size: 5.5em;
+	line-height: 1em;
 }
 .explanation {
 	width: 100%;
 	font-size: 2em;	
+}
+.txt-left {
+	text-align: left;
+	/*float:right;*/
+}
+#virkemidler-1 {
+	height:120%;
 }
