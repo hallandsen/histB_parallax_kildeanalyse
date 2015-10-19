@@ -598,7 +598,7 @@ controller.addScene([
 	var konsekvenserQuest = new ScrollMagic.Scene({
 		triggerElement: '#quest-7',
 		offset:'100',
-	 	duration: '360%'
+	 	duration: '410%'
 	}).setPin('#quest-7');
 
 	var konsekvenserTime3 = new ScrollMagic.Scene({
@@ -612,7 +612,7 @@ controller.addScene([
 	var konsekvenserExpl = new ScrollMagic.Scene({
 		triggerElement: '#konsekvenser-2',
 		offset:'150',
-		duration: '243%'
+		duration: '283%'
 	}).setPin('#expl-container-7');
 
 //scener tilføjes til controller
@@ -761,6 +761,12 @@ controller.addScene([
 	outro2FadeIn
 	.from('#outro-2-txt', 1, {opacity : 0});
 
+	var outro2FadeOut = new TimelineMax(); 
+	outro2FadeOut
+	.to('#expl-container-9, #brick-2-txt',1,{opacity : 0})
+	//.to('#brick-2-txt',1,{opacity:0, delay:-2})
+	;
+
 	//scenes
 
 	var outroFade = new ScrollMagic.Scene({
@@ -775,6 +781,12 @@ controller.addScene([
 	 	duration: '100%'
 	}).setTween(outro2FadeIn);
 
+	var outro2FadeAway = new ScrollMagic.Scene({
+		triggerElement: '#outro-fadeOut',
+		triggerHook: 'onLeave',
+	 	duration: '100%'
+	}).setTween(outro2FadeOut);
+
 	//SEKTION 2 - uddybning pinnes og fades ind
 
 	var outroExpl = new ScrollMagic.Scene({
@@ -786,12 +798,12 @@ controller.addScene([
 	var outro2Expl = new ScrollMagic.Scene({
 		triggerElement: '#outro-2',
 		offset:'145',
-		duration: '159%'
+		duration: '259%'
 	}).setPin('#expl-container-9');
 
 //scener tilføjes til controller
 controller.addScene([
-		outroFade, outroExpl, outro2Fade, outro2Expl
+		outroFade, outroExpl, outro2Fade, outro2Expl, outro2FadeAway
 	]);
 
 	// var scene3 = new ScrollMagic.Scene({
