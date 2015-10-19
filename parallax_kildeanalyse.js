@@ -104,7 +104,7 @@ $(document).ready(function() {
 		intro3, intro3Time
 	]);
 
-
+////////////////////////////////// BRIKKER /////////////////////////////////////////////
 
 //BRIKKER BEGYNDER
 
@@ -553,8 +553,8 @@ controller.addScene([
 
 	var virkemidlerExpl = new ScrollMagic.Scene({
 		triggerElement: '#virkemidler-2',
-		offset:'75',
-		duration: '163%'
+		offset:'150',
+		duration: '134%'
 	}).setPin('#expl-container-6');
 
 //scener tilføjes til controller
@@ -562,7 +562,237 @@ controller.addScene([
 		virkemidler1, virkemidlerTime, virkemidlerTime2, virkemidlerTime3, virkemidlerQuest, virkemidlerExpl
 	]);
 
+// 7. HVILKE KONSEKVENSER?
 
+	//Tweens
+	var konsekvenserFadeGrow = new TimelineMax();
+	konsekvenserFadeGrow.to('#quest-7', 3.7, {opacity : 1, scale: 1.5});
+		
+	var konsekvenserMoveX = new TimelineMax();
+	konsekvenserMoveX.to('#quest-7', 5, {xPercent: -74, delay: 25, ease:Power2.easeOut});
+	
+	var konsekvenserFadeIn1 = new TimelineMax();
+	konsekvenserFadeIn1
+		.from('#konsekvenser-txt-1', 2, {opacity : 0})
+		.from('#konsekvenser-txt-2', 2, {opacity : 0, delay:4})
+		.from('#konsekvenser-txt-3', 2, {opacity : 0, delay:4});
+
+	//scenes
+
+	var konsekvenser1 = new ScrollMagic.Scene({
+		triggerElement: '#no-7',
+		offset:'100',
+		duration: '30%'
+	}).setPin('#no-7');
+
+	var konsekvenserTime = new ScrollMagic.Scene({
+		triggerElement: '#konsekvenser-1',
+	 	duration: '100%'
+	}).setTween(konsekvenserFadeGrow);
+
+	var konsekvenserTime2 = new ScrollMagic.Scene({
+		triggerElement: '#konsekvenser-1',
+	 	duration: '100%'
+	}).setTween(konsekvenserMoveX);
+
+	var konsekvenserQuest = new ScrollMagic.Scene({
+		triggerElement: '#quest-7',
+		offset:'100',
+	 	duration: '360%'
+	}).setPin('#quest-7');
+
+	var konsekvenserTime3 = new ScrollMagic.Scene({
+		triggerElement: '#konsekvenser-2',
+		triggerHook: 'onLeave',
+	 	duration: '200%'
+	}).setTween(konsekvenserFadeIn1);
+
+	//SEKTION 2 - uddybning pinnes og fades ind
+
+	var konsekvenserExpl = new ScrollMagic.Scene({
+		triggerElement: '#konsekvenser-2',
+		offset:'150',
+		duration: '243%'
+	}).setPin('#expl-container-7');
+
+//scener tilføjes til controller
+controller.addScene([
+		konsekvenser1, konsekvenserTime, konsekvenserTime2, konsekvenserTime3, konsekvenserQuest, konsekvenserExpl
+	]);
+
+
+//BRIKKER BEGYNDER
+
+	//Timeslines
+	
+	var brick22FadeIn = new TimelineMax();
+	brick22FadeIn.to('#brick-2-2', 1, {opacity: 1});
+
+	var brick23FadeIn = new TimelineMax();
+	brick23FadeIn.to('#brick-2-3', 1, {opacity: 1});
+
+	var brick24FadeIn = new TimelineMax();
+	brick24FadeIn.to('#brick-2-4', 1, {opacity: 1});
+
+	var brick21Parallax = new TimelineMax();
+	brick21Parallax.to('#brick-2-1', 1, {y:'-40%', ease: Linear.easeNone});
+
+	var brick22Parallax = new TimelineMax();
+	brick22Parallax.to('#brick-2-2', 1, {y:'-60%', ease: Linear.easeNone});
+
+	var brick2TxtParallax = new TimelineMax();
+	brick2TxtParallax.to('#brick-2-txt', 1, {y:'-50%', ease: Linear.easeNone});
+
+	var brick23Parallax = new TimelineMax();
+	brick23Parallax.to('#brick-2-3', 1, {y:'-100%', ease: Linear.easeNone});
+
+	var brick24Parallax = new TimelineMax();
+	brick24Parallax.to('#brick-2-4', 1, {y:'-120%', ease: Linear.easeNone});
+
+	// var brick2hide = new TimelineMax();
+	// brick2hide.
+
+
+	//Scenes
+	var brikker21 = new ScrollMagic.Scene({
+		triggerElement: '#brick-2-1',
+		triggerHook:'onLeave',
+		duration: '460%'
+	}).setPin('#brick-2-1');
+
+	var brikker21Parallax = new ScrollMagic.Scene({
+		triggerElement:'#brick-2-1',
+		triggerHook:'onLeave',
+		duration: '660%'
+	}).setTween(brick21Parallax);
+
+	//Brick layer 2
+	var brikker22 = new ScrollMagic.Scene({
+		triggerElement: '#brick-2-2',
+		triggerHook:'onLeave',
+		duration: '360%'
+	}).setPin('#brick-2-2');
+
+	var brikker22Parallax = new ScrollMagic.Scene({
+		triggerElement:'#brick-2-2',
+		triggerHook:'onLeave',
+		duration: '460%'
+	}).setTween(brick22Parallax);
+
+	
+	var brikker2Tekst = new ScrollMagic.Scene({
+		triggerElement: '#brick-2-txt',
+		offset:'-75',
+		duration: '1160%'
+	}).setPin('#brick-2-txt');
+
+	var brikker2TxtParallax = new ScrollMagic.Scene({
+		triggerElement:'#brick-2-txt',
+		duration: '460%'
+	}).setTween(brick2TxtParallax);
+
+	//Brick layer 3
+	var brikker23 = new ScrollMagic.Scene({
+		triggerElement: '#brick-2-3',
+		triggerHook:'onLeave',
+		duration: '460%'
+	}).setPin('#brick-2-3');
+
+	var brikker23Parallax = new ScrollMagic.Scene({
+		triggerElement:'#brick-2-3',
+		triggerHook:'onLeave',
+		duration: '360%'
+	}).setTween(brick23Parallax);
+
+	//Brick layer 4
+	var brikker24 = new ScrollMagic.Scene({
+		triggerElement: '#brick-2-4',
+		triggerHook:'onLeave',
+		// offset:'300',
+		duration: '260%'
+	}).setPin('#brick-2-4');
+
+	var brikker24Parallax = new ScrollMagic.Scene({
+		triggerElement:'#brick-2-4',
+		triggerHook:'onLeave',
+		duration: '160%'
+	}).setTween(brick24Parallax);
+
+	
+
+	var gemBrikker = new ScrollMagic.Scene({
+		triggerElement:'brick-2-clear',
+		triggerHook:'onLeave',
+		duration:'100%'
+	});
+
+	// gemBrikker.on('leave', function (event) {
+	// 	$('#brick-2-txt').css('padding' , 'none');
+	// 	// $('#brick-2-3').css('display' , 'none');
+	// });
+
+	controller.addScene([
+		brikker21, 
+		brikker21Parallax,
+		
+		brikker22,
+		brikker22Parallax,
+
+		brikker2Tekst,
+		brikker2TxtParallax,
+
+		brikker23,
+		brikker23Parallax,
+
+		brikker24,
+		brikker24Parallax
+		//,gemBrikker
+	]);
+
+
+// 8. OUTRO
+
+	
+	var outroFadeIn = new TimelineMax();
+	outroFadeIn
+	.from('#outro-txt', 1, {opacity : 0});
+
+	var outro2FadeIn = new TimelineMax();
+	outro2FadeIn
+	.from('#outro-2-txt', 1, {opacity : 0});
+
+	//scenes
+
+	var outroFade = new ScrollMagic.Scene({
+		triggerElement: '#outro-1',
+		triggerHook: 'onLeave',
+	 	duration: '100%'
+	}).setTween(outroFadeIn);
+
+	var outro2Fade = new ScrollMagic.Scene({
+		triggerElement: '#outro-2',
+		triggerHook: 'onLeave',
+	 	duration: '100%'
+	}).setTween(outro2FadeIn);
+
+	//SEKTION 2 - uddybning pinnes og fades ind
+
+	var outroExpl = new ScrollMagic.Scene({
+		triggerElement: '#outro-1',
+		offset:'145',
+		duration: '159%'
+	}).setPin('#expl-container-8');
+
+	var outro2Expl = new ScrollMagic.Scene({
+		triggerElement: '#outro-2',
+		offset:'145',
+		duration: '159%'
+	}).setPin('#expl-container-9');
+
+//scener tilføjes til controller
+controller.addScene([
+		outroFade, outroExpl, outro2Fade, outro2Expl
+	]);
 
 	// var scene3 = new ScrollMagic.Scene({
 	// 	triggerElement: '#scene-4',
