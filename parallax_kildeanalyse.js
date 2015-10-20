@@ -1,7 +1,10 @@
 $(document).ready(function() {
 // init controller
 	var controller = new ScrollMagic.Controller();
-	
+
+	var windowHeight = $(window).height();
+	console.log('windowHeight '+windowHeight);
+
 	var leftW = $('.left').width();
 		var brickW = $('#brick22').width();
 		var x = leftW - brickW;
@@ -26,7 +29,7 @@ $(document).ready(function() {
 		.to('#arrow-up', 1, {opacity : 0, scale: 0.5, delay: -1});
 
 	var timeLineIntro2 = new TimelineMax();
-	timeLineIntro1
+	timeLineIntro2
 		.from('#intro-container-2', 1, {opacity : 0, scale: 0});
 
 	var timeLineIntro2span1 = new TimelineMax();
@@ -54,24 +57,26 @@ $(document).ready(function() {
 		duration: '50%'
 	}).setPin('#intro-container-1');
 
-	//SCENE 2
-
-	var intro2Time = new ScrollMagic.Scene({
-		triggerElement: '#scene-intro-3',
-		triggerHook: 'onEnter',
-		duration: '100%'
-	}).setTween(timeLineIntro2);
-
+	//SECTION 2
 	var intro2 = new ScrollMagic.Scene({
-		triggerElement: '#intro-container-2',
-		offset: '100',
+		triggerElement: '#scene-intro-2 .left .spacer',
+		triggerHook:'onLeave',
+		//offset: '100',
 		duration: '350%'
 	}).setPin('#intro-container-2');
 
+	var intro2Time = new ScrollMagic.Scene({
+		triggerElement: '#scene-intro-2',
+		triggerHook: 'onLeave',
+		// offset: '1000',
+		duration: '100%'
+	}).setTween(timeLineIntro2);
+
 	var intro2Expl = new ScrollMagic.Scene({
-		triggerElement: '#intro-container-3',
-		duration: '330%',
-		offset: "100"
+		triggerElement: '#scene-intro-4 .right .spacer',
+		triggerHook:'onLeave',
+		duration: '330%'
+		//offset: "100"
 	}).setPin('#intro-container-3');
 
 	var intro2ExplfadeIn1 = new ScrollMagic.Scene({
@@ -87,14 +92,14 @@ $(document).ready(function() {
 	}).setTween(timeLineIntro2span2);
 
 	var intro3 = new ScrollMagic.Scene({
-		triggerElement: '#intro-container-4',
-		offset: '100',
-		duration: '150%'
+		triggerElement: '#scene-intro-8 .left .spacer',
+		triggerHook: 'onLeave',
+		duration: '250%'
 	}).setPin('#intro-container-4');
 
 	var intro3Time = new ScrollMagic.Scene({
-		triggerElement: '#scene-intro-8',
-		triggerHook: 'onEnter',
+		triggerElement: '#scene-intro-9',
+		triggerHook: 'onLeave',
 		duration: '80%'
 	}).setTween(timeLineIntro3);
 
@@ -140,7 +145,7 @@ $(document).ready(function() {
 		triggerElement: '#brick-1',
 		triggerHook:'onLeave',
 		duration: '460%'
-	}).setPin('#brick-1');
+	}).setPin('#brick-1', {pushFollowers: false});
 
 	var brikker1Parallax = new ScrollMagic.Scene({
 		triggerElement:'#brick-1',
@@ -153,7 +158,7 @@ $(document).ready(function() {
 		triggerElement: '#brick-2',
 		triggerHook:'onLeave',
 		duration: '360%'
-	}).setPin('#brick-2');
+	}).setPin('#brick-2', {pushFollowers: false});
 
 	var brikker2Parallax = new ScrollMagic.Scene({
 		triggerElement:'#brick-2',
@@ -166,7 +171,7 @@ $(document).ready(function() {
 
 		triggerElement: '#brick-txt',
 		duration: '360%'
-	}).setPin('#brick-txt');
+	}).setPin('#brick-txt', {pushFollowers: false});
 
 	var brikkerTxtParallax = new ScrollMagic.Scene({
 		triggerElement:'#brick-txt',
@@ -178,7 +183,7 @@ $(document).ready(function() {
 		triggerElement: '#brick-3',
 		triggerHook:'onLeave',
 		duration: '360%'
-	}).setPin('#brick-3');
+	}).setPin('#brick-3', {pushFollowers: false});
 
 	var brikker3Parallax = new ScrollMagic.Scene({
 		triggerElement:'#brick-3',
@@ -192,7 +197,7 @@ $(document).ready(function() {
 		triggerHook:'onLeave',
 		// offset:'300',
 		duration: '260%'
-	}).setPin('#brick-4');
+	}).setPin('#brick-4', {pushFollowers: false});
 
 	var brikker4Parallax = new ScrollMagic.Scene({
 		triggerElement:'#brick-4',
@@ -398,12 +403,15 @@ controller.addScene([
 // 4. TIL HVEM
 
 	//Tweens
+	//spørgsmålet fader ind og vokser
 	var tilHvemFadeGrow = new TimelineMax();
 	tilHvemFadeGrow.to('#quest-4', 3.7, {opacity : 1, scale: 1.5});
-		
+	
+	//bevæg spørgsmål mod venstre
 	var tilHvemMoveX = new TimelineMax();
 	tilHvemMoveX.to('#quest-4', 5, {xPercent: -74, delay: 16, ease:Power2.easeOut});
 	
+	//fade den forklarende tekst ind
 	var tilHvemFadeIn1 = new TimelineMax();
 	tilHvemFadeIn1
 	.from('#til-hvem-txt-1', 1, {opacity : 0});
@@ -442,7 +450,7 @@ controller.addScene([
 
 	var tilHvemExpl = new ScrollMagic.Scene({
 		triggerElement: '#til-hvem-2',
-		offset:'75',
+		offset:'130',
 		duration: '163%'
 	}).setPin('#expl-container-4');
 
@@ -498,7 +506,7 @@ controller.addScene([
 
 	var omHvadExpl = new ScrollMagic.Scene({
 		triggerElement: '#om-hvad-2',
-		offset:'75',
+		offset:'130',
 		duration: '163%'
 	}).setPin('#expl-container-5');
 
@@ -657,51 +665,52 @@ controller.addScene([
 	var brikker21 = new ScrollMagic.Scene({
 		triggerElement: '#brick-2-1',
 		triggerHook:'onLeave',
-		duration: '460%'
-	}).setPin('#brick-2-1');
+		duration: '660%'
+	}).setPin('#brick-2-1', {pushFollowers: false});
 
 	var brikker21Parallax = new ScrollMagic.Scene({
 		triggerElement:'#brick-2-1',
 		triggerHook:'onLeave',
-		duration: '660%'
+		duration: '860%'
 	}).setTween(brick21Parallax);
 
 	//Brick layer 2
 	var brikker22 = new ScrollMagic.Scene({
 		triggerElement: '#brick-2-2',
 		triggerHook:'onLeave',
-		duration: '360%'
-	}).setPin('#brick-2-2');
+		duration: '560%'
+	}).setPin('#brick-2-2', {pushFollowers: false});
 
 	var brikker22Parallax = new ScrollMagic.Scene({
 		triggerElement:'#brick-2-2',
 		triggerHook:'onLeave',
-		duration: '460%'
+		duration: '660%'
 	}).setTween(brick22Parallax);
 
 	
 	var brikker2Tekst = new ScrollMagic.Scene({
 		triggerElement: '#brick-2-txt',
-		offset:'-75',
-		duration: '1160%'
-	}).setPin('#brick-2-txt');
+		//triggerHook:'onLeave',
+		// offset:'-75',
+		duration: '1360%'
+	}).setPin('#brick-2-txt', {pushFollowers: false});
 
 	var brikker2TxtParallax = new ScrollMagic.Scene({
 		triggerElement:'#brick-2-txt',
-		duration: '460%'
+		duration: '160%'
 	}).setTween(brick2TxtParallax);
 
 	//Brick layer 3
 	var brikker23 = new ScrollMagic.Scene({
 		triggerElement: '#brick-2-3',
 		triggerHook:'onLeave',
-		duration: '460%'
-	}).setPin('#brick-2-3');
+		duration: '660%'
+	}).setPin('#brick-2-3', {pushFollowers: false});
 
 	var brikker23Parallax = new ScrollMagic.Scene({
 		triggerElement:'#brick-2-3',
 		triggerHook:'onLeave',
-		duration: '360%'
+		duration: '560%'
 	}).setTween(brick23Parallax);
 
 	//Brick layer 4
@@ -709,22 +718,22 @@ controller.addScene([
 		triggerElement: '#brick-2-4',
 		triggerHook:'onLeave',
 		// offset:'300',
-		duration: '260%'
-	}).setPin('#brick-2-4');
+		duration: '460%'
+	}).setPin('#brick-2-4', {pushFollowers: false});
 
 	var brikker24Parallax = new ScrollMagic.Scene({
 		triggerElement:'#brick-2-4',
 		triggerHook:'onLeave',
-		duration: '160%'
+		duration: '360%'
 	}).setTween(brick24Parallax);
 
 	
 
-	var gemBrikker = new ScrollMagic.Scene({
-		triggerElement:'brick-2-clear',
-		triggerHook:'onLeave',
-		duration:'100%'
-	});
+	// var gemBrikker = new ScrollMagic.Scene({
+	// 	triggerElement:'brick-2-clear',
+	// 	triggerHook:'onLeave',
+	// 	duration:'100%'
+	// });
 
 	// gemBrikker.on('leave', function (event) {
 	// 	$('#brick-2-txt').css('padding' , 'none');
@@ -784,21 +793,23 @@ controller.addScene([
 	var outro2FadeAway = new ScrollMagic.Scene({
 		triggerElement: '#outro-fadeOut',
 		triggerHook: 'onLeave',
-	 	duration: '100%'
+	 	duration: '200%'
 	}).setTween(outro2FadeOut);
 
 	//SEKTION 2 - uddybning pinnes og fades ind
 
 	var outroExpl = new ScrollMagic.Scene({
-		triggerElement: '#outro-1',
-		offset:'145',
+		triggerElement: '#outro-1 .right .spacer',
+		triggerHook:'onLeave',
+		// offset:'145',
 		duration: '159%'
-	}).setPin('#expl-container-8');
+	}).setPin('#expl-container-8', {pushFollowers: false});
 
 	var outro2Expl = new ScrollMagic.Scene({
-		triggerElement: '#outro-2',
-		offset:'145',
-		duration: '259%'
+		triggerElement: '#outro-2 .right .spacer',
+		triggerHook:'onLeave',
+		// offset:'145',
+		duration: '459%'
 	}).setPin('#expl-container-9');
 
 //scener tilføjes til controller
