@@ -272,7 +272,7 @@ $(document).ready(function() {
 
 	var scene2 = new ScrollMagic.Scene({
 		triggerElement: '#scene-3',
-		offset:'75',
+		offset:'95',
 		duration: '164%'
 	}).setPin('#expl-container-1');
 
@@ -333,7 +333,7 @@ $(document).ready(function() {
 
 	var hvemExpl = new ScrollMagic.Scene({
 		triggerElement: '#scene-5',
-		offset:'75',
+		offset:'95',
 		duration: '159%'
 	}).setPin('#expl-container-2');
 
@@ -391,7 +391,7 @@ controller.addScene([
 
 	var hvornaarExpl = new ScrollMagic.Scene({
 		triggerElement: '#hvornaar-2',
-		offset:'75',
+		offset:'95',
 		duration: '156%'
 	}).setPin('#expl-container-3');
 
@@ -451,7 +451,7 @@ controller.addScene([
 	var tilHvemExpl = new ScrollMagic.Scene({
 		triggerElement: '#til-hvem-2',
 		offset:'130',
-		duration: '163%'
+		duration: '153%'
 	}).setPin('#expl-container-4');
 
 //scener tilføjes til controller
@@ -561,7 +561,7 @@ controller.addScene([
 
 	var virkemidlerExpl = new ScrollMagic.Scene({
 		triggerElement: '#virkemidler-2',
-		offset:'150',
+		offset:'120',
 		duration: '134%'
 	}).setPin('#expl-container-6');
 
@@ -629,7 +629,7 @@ controller.addScene([
 	]);
 
 
-//BRIKKER BEGYNDER
+//BRIKKER BEGYNDER IGEN
 
 	//Timeslines
 	
@@ -781,12 +781,14 @@ controller.addScene([
 	var outroFade = new ScrollMagic.Scene({
 		triggerElement: '#outro-1',
 		triggerHook: 'onLeave',
+		offset:'500',
 	 	duration: '100%'
 	}).setTween(outroFadeIn);
 
 	var outro2Fade = new ScrollMagic.Scene({
 		triggerElement: '#outro-2',
 		triggerHook: 'onLeave',
+		offset:'500',
 	 	duration: '100%'
 	}).setTween(outro2FadeIn);
 
@@ -799,14 +801,14 @@ controller.addScene([
 	//SEKTION 2 - uddybning pinnes og fades ind
 
 	var outroExpl = new ScrollMagic.Scene({
-		triggerElement: '#outro-1 .right .spacer',
+		triggerElement: '#outro-1 .right .spacer3',
 		triggerHook:'onLeave',
 		// offset:'145',
 		duration: '159%'
 	}).setPin('#expl-container-8', {pushFollowers: false});
 
 	var outro2Expl = new ScrollMagic.Scene({
-		triggerElement: '#outro-2 .right .spacer',
+		triggerElement: '#outro-2 .right .spacer3',
 		triggerHook:'onLeave',
 		// offset:'145',
 		duration: '459%'

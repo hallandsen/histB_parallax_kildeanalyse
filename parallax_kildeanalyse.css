@@ -4,6 +4,7 @@ html,body {
 	background-color: #363636;
 	margin:0;
 	padding:0;
+	font-size: 100%;
 }
 .container-fluid {
 	background-color: #363636;
@@ -53,6 +54,14 @@ h4 {
 }
 .spacer {
 	height:30%;
+	width:100%;
+}
+.spacer2 {
+	height:5%;
+	width:100%;
+}
+.spacer3{
+	height:32%;
 	width:100%;
 }
 .hidden{
@@ -145,21 +154,10 @@ h4 {
 #intro-4-span, #intro-41-span{
 	opacity: 0;
 }
-
-
 .white-bold {
 	color: white;
 	font-weight: bold;
 }
-
-/*.brick {
-	width:120px;
-}
-#brick1,{
-	display: inline-block;
-	float:left;
-}*/
-
 #brick21 {
 	display: inline-block;
 	float:left;
@@ -209,3 +207,36 @@ h4 {
 #virkemidler-1, #konsekvenser-1 {
 	height:120%;
 }
+
+/*MEDIA QUERIES*/
+
+@media only screen and (min-width: 1300px) and (max-width: 1399px) {
+    body { font-size:90%;}
+}
+@media only screen and (min-width: 1200px) and (max-width: 1299px) {
+    body { font-size:80%;}
+}
+@media only screen and (min-width: 1100px) and (max-width: 1199px){
+    body { font-size:70%;}
+}
+@media only screen and (min-width: 1000px) and (max-width: 1099px){
+    body { font-size:60%;}
+}
+@media only screen and (min-width: 900px) and (max-width: 999px){
+    body { font-size:50%;}
+    .explanation {font-size: 2.5em;}
+}
+@media only screen and (min-width: 750px) and (max-width: 899px) {
+    body { font-size:50%;}
+    .explanation {font-size: 2.5em;}
+}
+@media only screen and (min-width: 600px) and (max-width: 749px) {
+    body { font-size:40%;}
+    .explanation {font-size: 3em;}
+}
+@media only screen and (max-width: 599px) {
+    body { font-size:30%;}
+    .explanation {font-size: 3em;}
+}
+
+
