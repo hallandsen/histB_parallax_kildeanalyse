@@ -26,19 +26,16 @@ $(document).ready(function() {
 	var timeLineIntro1 = new TimelineMax();
 	timeLineIntro1
 		.to('#scene-intro-1 h4', 1, {opacity : 0, scale: 0.5})
-		.to('#arrow-up', 1, {opacity : 0, scale: 0.5, delay: -1});
+		.to('#arrow-up', 1, {opacity : 0, scale: 0.5, delay: -1})
+		.to('#arrow-down', 1, {opacity : 0, scale: 0.5, delay: 1});
 
 	var timeLineIntro2 = new TimelineMax();
 	timeLineIntro2
-		.from('#intro-container-2', 1, {opacity : 0, scale: 0});
+		.from('#intro-container-2', 1, {opacity : 0, scale: 0, delay:0.3});
 
-	var timeLineIntro2span1 = new TimelineMax();
-	timeLineIntro2span1
+	var timeLineIntro2span = new TimelineMax();
+	timeLineIntro2span
 		.to('#intro-4-span', 1, {opacity:1, ease:Power2.easeIn});
-
-	var timeLineIntro2span2 = new TimelineMax();
-	timeLineIntro2span2
-		.to('#intro-41-span', 1, {opacity:1, ease:Power2.easeIn});
 
 	var timeLineIntro3 = new TimelineMax();
 	timeLineIntro3
@@ -57,17 +54,17 @@ $(document).ready(function() {
 		duration: '50%'
 	}).setPin('#intro-container-1');
 
-	//SECTION 2
+	//SECTION 2 - DU SKAL LÆRE EN METODE
 	var intro2 = new ScrollMagic.Scene({
-		triggerElement: '#scene-intro-2 .left .spacer',
+		triggerElement: '#arrow-down',
 		triggerHook:'onLeave',
 		//offset: '100',
-		duration: '350%'
+		duration: '330%'
 	}).setPin('#intro-container-2');
 
 	var intro2Time = new ScrollMagic.Scene({
-		triggerElement: '#scene-intro-2',
-		triggerHook: 'onLeave',
+		triggerElement: '#arrow-down',
+		//triggerHook: 'onLeave',
 		// offset: '1000',
 		duration: '100%'
 	}).setTween(timeLineIntro2);
@@ -75,43 +72,99 @@ $(document).ready(function() {
 	var intro2Expl = new ScrollMagic.Scene({
 		triggerElement: '#scene-intro-4 .right .spacer',
 		triggerHook:'onLeave',
-		duration: '330%'
+		duration: '230%'
 		//offset: "100"
 	}).setPin('#intro-container-3');
 
-	var intro2ExplfadeIn1 = new ScrollMagic.Scene({
-		triggerElement: '#scene-intro-5',
-		triggerHook: 'onEnter',
-		duration: '100%'
-	}).setTween(timeLineIntro2span1);
-
-	var intro2ExplfadeIn2 = new ScrollMagic.Scene({
+	var intro2ExplfadeIn = new ScrollMagic.Scene({
 		triggerElement: '#scene-intro-6',
 		triggerHook: 'onEnter',
 		duration: '100%'
-	}).setTween(timeLineIntro2span2);
+	}).setTween(timeLineIntro2span);
 
+// TRAKT
+	var trakt1Pin = new ScrollMagic.Scene({
+		triggerElement:'#trakt-1',
+		triggerHook: 'onLeave',
+		duration: '1000%'
+	}).setPin('#trakt-1', {pushFollowers: false});
+
+	var trakt2Pin = new ScrollMagic.Scene({
+		triggerElement:'#trakt-2',
+		triggerHook: 'onLeave',
+		duration: '900%'
+	}).setPin('#trakt-2', {pushFollowers: false});
+
+	var trakt3Pin = new ScrollMagic.Scene({
+		triggerElement:'#trakt-3',
+		triggerHook: 'onLeave',
+		duration: '800%'
+	}).setPin('#trakt-3', {pushFollowers: false});
+
+	var trakt4Pin = new ScrollMagic.Scene({
+		triggerElement:'#trakt-4',
+		triggerHook: 'onLeave',
+		duration: '700%'
+	}).setPin('#trakt-4', {pushFollowers: false});
+
+	var traktTxtPin = new ScrollMagic.Scene({
+		triggerElement:'#trakt-txt .right .spacer',
+		triggerHook: 'onLeave',
+		duration: '100%'
+	}).setPin('#trakt-txt-container', {pushFollowers: false});
+
+	var trktList1 = new ScrollMagic.Scene({
+		triggerElement: '#scene-trakt-list-1',
+		triggerHook: 'onLeave',
+		duration: '400%'
+	}).setPin('#trakt-list-1', {pushFollowers: false})
+
+	var trktList2 = new ScrollMagic.Scene({
+		triggerElement: '#scene-trakt-list-2',
+		triggerHook: 'onLeave',
+		duration: '300%'
+	}).setPin('#trakt-list-2', {pushFollowers: false})
+
+	var trktList3 = new ScrollMagic.Scene({
+		triggerElement: '#scene-trakt-list-3',
+		triggerHook: 'onLeave',
+		duration: '200%'
+	}).setPin('#trakt-list-3', {pushFollowers: false})
+
+	var trktList4 = new ScrollMagic.Scene({
+		triggerElement: '#scene-trakt-list-4',
+		triggerHook: 'onLeave',
+		duration: '100%'
+	}).setPin('#trakt-list-4', {pushFollowers: false})
+
+
+
+
+
+// METODEN KALDES ........
 	var intro3 = new ScrollMagic.Scene({
 		triggerElement: '#scene-intro-8 .left .spacer',
 		triggerHook: 'onLeave',
-		duration: '250%'
+		duration: '230%'
 	}).setPin('#intro-container-4');
 
 	var intro3Time = new ScrollMagic.Scene({
-		triggerElement: '#scene-intro-9',
+		triggerElement: '#scene-trkt-list',
 		triggerHook: 'onLeave',
 		duration: '80%'
 	}).setTween(timeLineIntro3);
 
 	controller.addScene([
 		intro1,intro1Time,
-		intro2, intro2Time, intro2Expl, intro2ExplfadeIn1,intro2ExplfadeIn2,
-		intro3, intro3Time
+		intro2, intro2Time, intro2Expl, intro2ExplfadeIn,
+		intro3, intro3Time,
+		trakt1Pin, trakt2Pin, trakt3Pin, trakt4Pin, traktTxtPin,
+		trktList1, trktList2, trktList3, trktList4
 	]);
 
 ////////////////////////////////// BRIKKER /////////////////////////////////////////////
 
-//BRIKKER BEGYNDER
+//SPØRGSMÅLSTEGN BEGYNDER
 
 	//Timeslines
 	
@@ -134,7 +187,7 @@ $(document).ready(function() {
 	brickTxtParallax.to('#brick-txt', 1, {y:'-80%', ease: Linear.easeNone});
 
 	var brick3Parallax = new TimelineMax();
-	brick3Parallax.to('#brick-3', 1, {y:'-100%', ease: Linear.easeNone});
+	brick3Parallax.to('#brick-3', 1, {y:'-110%', ease: Linear.easeNone});
 
 	var brick4Parallax = new TimelineMax();
 	brick4Parallax.to('#brick-4', 1, {y:'-120%', ease: Linear.easeNone});
@@ -144,26 +197,26 @@ $(document).ready(function() {
 	var brikker1 = new ScrollMagic.Scene({
 		triggerElement: '#brick-1',
 		triggerHook:'onLeave',
-		duration: '460%'
+		duration: '500%'
 	}).setPin('#brick-1', {pushFollowers: false});
 
 	var brikker1Parallax = new ScrollMagic.Scene({
 		triggerElement:'#brick-1',
 		triggerHook:'onLeave',
-		duration: '660%'
+		duration: '500%'
 	}).setTween(brick1Parallax);
 
 	//Brick layer 2
 	var brikker2 = new ScrollMagic.Scene({
 		triggerElement: '#brick-2',
 		triggerHook:'onLeave',
-		duration: '360%'
+		duration: '400%'
 	}).setPin('#brick-2', {pushFollowers: false});
 
 	var brikker2Parallax = new ScrollMagic.Scene({
 		triggerElement:'#brick-2',
 		triggerHook:'onLeave',
-		duration: '460%'
+		duration: '400%'
 	}).setTween(brick2Parallax);
 
 	
@@ -182,13 +235,13 @@ $(document).ready(function() {
 	var brikker3 = new ScrollMagic.Scene({
 		triggerElement: '#brick-3',
 		triggerHook:'onLeave',
-		duration: '360%'
+		duration: '300%'
 	}).setPin('#brick-3', {pushFollowers: false});
 
 	var brikker3Parallax = new ScrollMagic.Scene({
 		triggerElement:'#brick-3',
 		triggerHook:'onLeave',
-		duration: '360%'
+		duration: '300%'
 	}).setTween(brick3Parallax);
 
 	//Brick layer 4
@@ -196,13 +249,13 @@ $(document).ready(function() {
 		triggerElement: '#brick-4',
 		triggerHook:'onLeave',
 		// offset:'300',
-		duration: '260%'
+		duration: '200%'
 	}).setPin('#brick-4', {pushFollowers: false});
 
 	var brikker4Parallax = new ScrollMagic.Scene({
 		triggerElement:'#brick-4',
 		triggerHook:'onLeave',
-		duration: '60%'
+		duration: '200%'
 	}).setTween(brick4Parallax);
 
 
@@ -629,7 +682,7 @@ controller.addScene([
 	]);
 
 
-//BRIKKER BEGYNDER IGEN
+//SPØRGSMÅLSTEGN BEGYNDER IGEN
 
 	//Timeslines
 	
@@ -652,10 +705,10 @@ controller.addScene([
 	brick2TxtParallax.to('#brick-2-txt', 1, {y:'-50%', ease: Linear.easeNone});
 
 	var brick23Parallax = new TimelineMax();
-	brick23Parallax.to('#brick-2-3', 1, {y:'-100%', ease: Linear.easeNone});
+	brick23Parallax.to('#brick-2-3', 1, {y:'-120%', ease: Linear.easeNone});
 
 	var brick24Parallax = new TimelineMax();
-	brick24Parallax.to('#brick-2-4', 1, {y:'-120%', ease: Linear.easeNone});
+	brick24Parallax.to('#brick-2-4', 1, {y:'-140%', ease: Linear.easeNone});
 
 	// var brick2hide = new TimelineMax();
 	// brick2hide.

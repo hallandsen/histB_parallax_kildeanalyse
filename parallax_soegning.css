@@ -64,6 +64,9 @@ h4 {
 	height:32%;
 	width:100%;
 }
+.spacer-metode{
+	margin-top: -10%;
+}
 .hidden{
 	opacity: 0;
 }
@@ -100,7 +103,34 @@ h4 {
 	color:white;
 	opacity: 1;
 }
+.half-scene {
+	height:50%;
+	width: :100%;
+}
 
+/* ________ TRAKT ________ */
+
+.trakt-scene{
+	height:100%;
+}
+.trakt {
+	max-width: 80%;
+	max-height: 100%;
+}
+#trakt-list-1 {
+	margin-top: -5%;
+}
+#trakt-list-2 {
+	margin-top: 10%;
+}
+#trakt-list-3 {
+	margin-top: 25%;
+}
+#trakt-list-4 {
+	margin-top: 40%;
+}
+
+/* ________ BRIKKER ________ */
 .brick-container {
 	height:100%;
 	width: 100%;
@@ -157,15 +187,6 @@ h4 {
 .white-bold {
 	color: white;
 	font-weight: bold;
-}
-#brick21 {
-	display: inline-block;
-	float:left;
-
-}
-#brick22 {
-	display: inline-block;
-	margin-right: -4%;
 }
 .st0{
 	fill:#69C6AB;
