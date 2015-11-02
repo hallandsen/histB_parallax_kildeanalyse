@@ -26,7 +26,8 @@ $(document).ready(function() {
 	var timeLineIntro1 = new TimelineMax();
 	timeLineIntro1
 		.to('#scene-intro-1 h4', 1, {opacity : 0, scale: 0.5})
-		.to('#arrow-up', 1, {opacity : 0, scale: 0.5, delay: -1});
+		.to('#arrow-up', 1, {opacity : 0, scale: 0.5, delay: -1})
+		.to('#arrow-down', 1, {opacity : 0, scale: 0.5, delay: 1});
 
 	var timeLineIntro2 = new TimelineMax();
 	timeLineIntro2
@@ -59,15 +60,15 @@ $(document).ready(function() {
 
 	//SECTION 2
 	var intro2 = new ScrollMagic.Scene({
-		triggerElement: '#scene-intro-2 .left .spacer',
+		triggerElement: '#arrow-down',
 		triggerHook:'onLeave',
 		//offset: '100',
 		duration: '350%'
 	}).setPin('#intro-container-2');
 
 	var intro2Time = new ScrollMagic.Scene({
-		triggerElement: '#scene-intro-2',
-		triggerHook: 'onLeave',
+		triggerElement: '#arrow-down',
+		//triggerHook: 'onLeave',
 		// offset: '1000',
 		duration: '100%'
 	}).setTween(timeLineIntro2);
@@ -134,10 +135,10 @@ $(document).ready(function() {
 	brickTxtParallax.to('#brick-txt', 1, {y:'-80%', ease: Linear.easeNone});
 
 	var brick3Parallax = new TimelineMax();
-	brick3Parallax.to('#brick-3', 1, {y:'-100%', ease: Linear.easeNone});
+	brick3Parallax.to('#brick-3', 1, {y:'-120%', ease: Linear.easeNone});
 
 	var brick4Parallax = new TimelineMax();
-	brick4Parallax.to('#brick-4', 1, {y:'-120%', ease: Linear.easeNone});
+	brick4Parallax.to('#brick-4', 1, {y:'-140%', ease: Linear.easeNone});
 
 
 	//Scenes

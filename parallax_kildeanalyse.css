@@ -64,6 +64,9 @@ h4 {
 	height:32%;
 	width:100%;
 }
+.spacer-metode{
+	margin-top: -10%;
+}
 .hidden{
 	opacity: 0;
 }
