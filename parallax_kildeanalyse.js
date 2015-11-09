@@ -2,27 +2,9 @@ $(document).ready(function() {
 // init controller
 	var controller = new ScrollMagic.Controller();
 
-	var windowHeight = $(window).height();
-	console.log('windowHeight '+windowHeight);
-
-	var leftW = $('.left').width();
-		var brickW = $('#brick22').width();
-		var x = leftW - brickW;
-		var xPos = x + 24;
-		console.log('xPos: '+xPos);
-	//Tweens 
-	var horizontalTweenB22 = new TweenMax.to('#brick22', 0.5, {
-
-		x: xPos
-	});
-
-	var colorTween = new TweenMax.to('#svg-clr', 0.5, {
-		fill: '#F15548'
-	});
-
 //INTRO
 
-	//tweens
+	//animationer der skal kaldes
 	var timeLineIntro1 = new TimelineMax();
 	timeLineIntro1
 		.to('#scene-intro-1 h4', 1, {opacity : 0, scale: 0.5})
@@ -45,7 +27,7 @@ $(document).ready(function() {
 	timeLineIntro3
 		.from('#intro-container-4', 1, {opacity : 0, scale: 0});
 
-	//scenes
+	//scener
 	var intro1Time = new ScrollMagic.Scene({
 		triggerElement: '#scene-intro-1',
 		triggerHook:'onLeave',
@@ -111,17 +93,7 @@ $(document).ready(function() {
 
 //BRIKKER BEGYNDER
 
-	//Timeslines
-	
-	var brick2FadeIn = new TimelineMax();
-	brick2FadeIn.to('#brick-2', 1, {opacity: 1});
-
-	var brick3FadeIn = new TimelineMax();
-	brick3FadeIn.to('#brick-3', 1, {opacity: 1});
-
-	var brick4FadeIn = new TimelineMax();
-	brick4FadeIn.to('#brick-4', 1, {opacity: 1});
-
+	//animationer der skal kaldes
 	var brick1Parallax = new TimelineMax();
 	brick1Parallax.to('#brick-1', 1, {y:'-40%', ease: Linear.easeNone});
 
@@ -138,7 +110,7 @@ $(document).ready(function() {
 	brick4Parallax.to('#brick-4', 1, {y:'-140%', ease: Linear.easeNone});
 
 
-	//Scenes
+	//Scener
 	var brikker1 = new ScrollMagic.Scene({
 		triggerElement: '#brick-1',
 		triggerHook:'onLeave',
@@ -193,7 +165,6 @@ $(document).ready(function() {
 	var brikker4 = new ScrollMagic.Scene({
 		triggerElement: '#brick-4',
 		triggerHook:'onLeave',
-		// offset:'300',
 		duration: '260%'
 	}).setPin('#brick-4', {pushFollowers: false});
 
@@ -222,24 +193,22 @@ $(document).ready(function() {
 	]);
 
 
-
-
 ////////////////////////////////// DE 7 TRIN //////////////////////////////////
 
 // 1. HVAD
 
-	//Tweens
+	//animationer der skal kaldes
+	//spørgsmålet fader ind og vokser
 	var timeLine1 = new TimelineMax();
 	timeLine1.to('#quest-1', 3.7, {opacity : 1, scale: 1.5});
-		
+	//bevæg spørgsmål mod venstre
 	var timeLine2 = new TimelineMax();
 	timeLine2.to('#quest-1', 5, {xPercent: -74, delay: 1, ease:Power2.easeOut});
-	
+	//fade den forklarende tekst ind
 	var explFadeIn = new TimelineMax();
 	explFadeIn.from('#hvad-txt', 1, {opacity : 0});
 
-	//scenes
-
+	//scener
 	var scene1 = new ScrollMagic.Scene({
 		triggerElement: '#no-1',
 		offset:'100',
@@ -284,7 +253,7 @@ $(document).ready(function() {
 
 // 2. HVEM
 
-	//Tweens
+	//animationer der skal kaldes
 	var hvemFadeGrow = new TimelineMax();
 	hvemFadeGrow.to('#quest-2', 3.7, {opacity : 1, scale: 1.5});
 		
@@ -296,7 +265,7 @@ $(document).ready(function() {
 	.from('#hvem-txt-1', 1, {opacity : 0})
 	.from('#hvem-txt-2', 1, {opacity : 0, delay:2});
 
-	//scenes
+	//scener
 
 	var hvem1 = new ScrollMagic.Scene({
 		triggerElement: '#no-2',
@@ -344,7 +313,7 @@ controller.addScene([
 
 // 3. HVORNÅR
 
-	//Tweens
+	//animationer der skal kaldes
 	var hvornaarFadeGrow = new TimelineMax();
 	hvornaarFadeGrow.to('#quest-3', 3.7, {opacity : 1, scale: 1.5});
 		
@@ -356,8 +325,7 @@ controller.addScene([
 	.from('#hvornaar-txt-1', 1, {opacity : 0})
 	.from('#hvornaar-txt-2', 1, {opacity : 0, delay:2});
 
-	//scenes
-
+	//scener
 	var hvornaar1 = new ScrollMagic.Scene({
 		triggerElement: '#no-3',
 		offset:'100',
@@ -403,7 +371,7 @@ controller.addScene([
 
 // 4. TIL HVEM
 
-	//Tweens
+	//animationer der skal kaldes
 	//spørgsmålet fader ind og vokser
 	var tilHvemFadeGrow = new TimelineMax();
 	tilHvemFadeGrow.to('#quest-4', 3.7, {opacity : 1, scale: 1.5});
@@ -417,8 +385,7 @@ controller.addScene([
 	tilHvemFadeIn1
 	.from('#til-hvem-txt-1', 1, {opacity : 0});
 
-	//scenes
-
+	//scener
 	var tilHvem1 = new ScrollMagic.Scene({
 		triggerElement: '#no-4',
 		offset:'100',
@@ -465,7 +432,7 @@ controller.addScene([
 
 // 5. OM HVAD
 
-	//Tweens
+	//animationer der skal kaldes
 	var omHvadFadeGrow = new TimelineMax();
 	omHvadFadeGrow.to('#quest-5', 3.7, {opacity : 1, scale: 1.5});
 		
@@ -476,8 +443,7 @@ controller.addScene([
 	omHvadFadeIn1
 	.from('#om-hvad-txt-1', 1, {opacity : 0});
 
-	//scenes
-
+	//scener
 	var omHvad1 = new ScrollMagic.Scene({
 		triggerElement: '#no-5',
 		offset:'100',
@@ -524,7 +490,7 @@ controller.addScene([
 
 // 6. HVILKE VIRKEMIDLER
 
-	//Tweens
+	//animationer der skal kaldes
 	var virkemidlerFadeGrow = new TimelineMax();
 	virkemidlerFadeGrow.to('#quest-6', 3.7, {opacity : 1, scale: 1.5});
 		
@@ -534,8 +500,7 @@ controller.addScene([
 	var virkemidlerFadeIn1 = new TimelineMax();
 	virkemidlerFadeIn1.from('#virkemidler-txt-1', 1, {opacity : 0});
 
-	//scenes
-
+	//scener
 	var virkemidler1 = new ScrollMagic.Scene({
 		triggerElement: '#no-6',
 		offset:'100',
@@ -582,7 +547,7 @@ controller.addScene([
 
 // 7. HVILKE KONSEKVENSER?
 
-	//Tweens
+	//animationer der skal kaldes
 	var konsekvenserFadeGrow = new TimelineMax();
 	konsekvenserFadeGrow.to('#quest-7', 3.7, {opacity : 1, scale: 1.5});
 		
@@ -595,8 +560,7 @@ controller.addScene([
 		.from('#konsekvenser-txt-2', 2, {opacity : 0, delay:4})
 		.from('#konsekvenser-txt-3', 2, {opacity : 0, delay:4});
 
-	//scenes
-
+	//scener
 	var konsekvenser1 = new ScrollMagic.Scene({
 		triggerElement: '#no-7',
 		offset:'100',
@@ -644,17 +608,7 @@ controller.addScene([
 
 //BRIKKER BEGYNDER IGEN
 
-	//Timeslines
-	
-	var brick22FadeIn = new TimelineMax();
-	brick22FadeIn.to('#brick-2-2', 1, {opacity: 1});
-
-	var brick23FadeIn = new TimelineMax();
-	brick23FadeIn.to('#brick-2-3', 1, {opacity: 1});
-
-	var brick24FadeIn = new TimelineMax();
-	brick24FadeIn.to('#brick-2-4', 1, {opacity: 1});
-
+	//animationer der skal kaldes
 	var brick21Parallax = new TimelineMax();
 	brick21Parallax.to('#brick-2-1', 1, {y:'-40%', ease: Linear.easeNone});
 
@@ -669,10 +623,6 @@ controller.addScene([
 
 	var brick24Parallax = new TimelineMax();
 	brick24Parallax.to('#brick-2-4', 1, {y:'-120%', ease: Linear.easeNone});
-
-	// var brick2hide = new TimelineMax();
-	// brick2hide.
-
 
 	//Scenes
 	var brikker21 = new ScrollMagic.Scene({
@@ -703,8 +653,7 @@ controller.addScene([
 	
 	var brikker2Tekst = new ScrollMagic.Scene({
 		triggerElement: '#brick-2-txt',
-		//triggerHook:'onLeave',
-		// offset:'-75',
+
 		duration: '1360%'
 	}).setPin('#brick-2-txt', {pushFollowers: false});
 
@@ -730,7 +679,6 @@ controller.addScene([
 	var brikker24 = new ScrollMagic.Scene({
 		triggerElement: '#brick-2-4',
 		triggerHook:'onLeave',
-		// offset:'300',
 		duration: '460%'
 	}).setPin('#brick-2-4', {pushFollowers: false});
 
@@ -739,19 +687,6 @@ controller.addScene([
 		triggerHook:'onLeave',
 		duration: '360%'
 	}).setTween(brick24Parallax);
-
-	
-
-	// var gemBrikker = new ScrollMagic.Scene({
-	// 	triggerElement:'brick-2-clear',
-	// 	triggerHook:'onLeave',
-	// 	duration:'100%'
-	// });
-
-	// gemBrikker.on('leave', function (event) {
-	// 	$('#brick-2-txt').css('padding' , 'none');
-	// 	// $('#brick-2-3').css('display' , 'none');
-	// });
 
 	controller.addScene([
 		brikker21, 
@@ -768,13 +703,12 @@ controller.addScene([
 
 		brikker24,
 		brikker24Parallax
-		//,gemBrikker
 	]);
 
 
 // 8. OUTRO
 
-	
+	//animationer der skal kaldes
 	var outroFadeIn = new TimelineMax();
 	outroFadeIn
 	.from('#outro-txt', 1, {opacity : 0});
@@ -785,12 +719,9 @@ controller.addScene([
 
 	var outro2FadeOut = new TimelineMax(); 
 	outro2FadeOut
-	.to('#expl-container-9, #brick-2-txt',1,{opacity : 0})
-	//.to('#brick-2-txt',1,{opacity:0, delay:-2})
-	;
+	.to('#expl-container-9, #brick-2-txt',1,{opacity : 0});
 
-	//scenes
-
+	//scener
 	var outroFade = new ScrollMagic.Scene({
 		triggerElement: '#outro-1',
 		triggerHook: 'onLeave',
@@ -816,14 +747,14 @@ controller.addScene([
 	var outroExpl = new ScrollMagic.Scene({
 		triggerElement: '#outro-1 .right .spacer3',
 		triggerHook:'onLeave',
-		// offset:'145',
+
 		duration: '159%'
 	}).setPin('#expl-container-8', {pushFollowers: false});
 
 	var outro2Expl = new ScrollMagic.Scene({
 		triggerElement: '#outro-2 .right .spacer3',
 		triggerHook:'onLeave',
-		// offset:'145',
+
 		duration: '459%'
 	}).setPin('#expl-container-9');
 
