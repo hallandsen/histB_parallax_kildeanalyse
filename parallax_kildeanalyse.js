@@ -2,7 +2,9 @@ $(document).ready(function() {
 // init controller
 	var controller = new ScrollMagic.Controller();
 
-//INTRO
+	
+
+////////////////////////////////// INTRO //////////////////////////////////
 
 	//animationer der skal kaldes
 	var timeLineIntro1 = new TimelineMax();
