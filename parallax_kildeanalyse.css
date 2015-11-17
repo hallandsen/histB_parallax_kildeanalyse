@@ -38,17 +38,15 @@ h4 {
 	margin: 0px;
 	padding:0 30px;
 }
+.scene-spg {
+	height:120%;
+	width: 100%;
+}
 
 .half-scene {
 	height:50%;
 	width: :100%;
 }
-
-.scene-spg {
-	height:100%;
-	width:100%;
-}
-
 .left {
 	float:left;
 	width:50%;
@@ -64,6 +62,9 @@ h4 {
 .spacer {
 	height:30%;
 	width:100%;
+}
+.no-spacer {
+	height:30%;
 }
 .spacer2 {
 	height:5%;
@@ -92,7 +93,7 @@ h4 {
 	opacity: 1;
 }
 #arrow-down{
-	margin-top: -30px;
+	margin-top: -3%;
 }
 
 .pile {
@@ -190,18 +191,19 @@ h4 {
 	vertical-align: top;
 }
 .question {
-	font-size: 6em;
+	font-size: 9em;
 	text-align: center;
 	color:white;
+	opacity: 1;
 }
-#quest-1, #quest-2, #quest-3, #quest-4, #quest-5, #quest-6, #quest-7  {
-	opacity: 0;
+
+#quest-3, #quest-4, #quest-5 {
+	font-size: 8em;
+	line-height: 1em;
+	vertical-align: top;
 }
-#quest-3 {
-	font-size: 5.5em;
-}
-#quest-4, #quest-5, #quest-6, #quest-7 {
-	font-size: 5.5em;
+#quest-6, #quest-7 {
+	font-size: 7em;
 	line-height: 1em;
 	vertical-align: top;
 }
@@ -209,6 +211,10 @@ h4 {
 	width: 100%;
 	font-size: 2em;	
 }
+/*#expl-3 {
+	font-size:1.7em;
+}*/
+
 .txt-left {
 	text-align: left;
 }
@@ -232,21 +238,21 @@ h4 {
 }
 @media only screen and (min-width: 900px) and (max-width: 999px){
     body { font-size:50%;}
-    .explanation {font-size: 2.5em;}
+    .explanation,  .intro-small, #brick-txt {font-size: 2.5em;}
 }
 @media only screen and (min-width: 750px) and (max-width: 899px) {
     body { font-size:50%;}
-    .explanation {font-size: 2.5em;}
+    .explanation,  .intro-small, #brick-txt {font-size: 2.5em;}
 }
 @media only screen and (min-width: 600px) and (max-width: 749px) {
     body { font-size:40%;}
-    .explanation {font-size: 3em;}
+    .explanation,  .intro-small, #brick-txt {font-size: 3em;}
 }
 @media only screen and (min-width: 420px) and (max-width: 599px) {
     body { font-size:30%;}
-    .explanation {font-size: 3em;}
-
+    .explanation,  .intro-small, #brick-txt {font-size: 3em;}
+}
 @media only screen and (min-width: 10px) and (max-width: 419px) {
     body { font-size:20%;}
-    .explanation {font-size: 3em;}
+    .explanation,  .intro-small, #brick-txt {font-size: 3em;}
 }

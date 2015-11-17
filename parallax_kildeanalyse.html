@@ -11,7 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	</head>
 	<body>
-		<div class="container-fluid">     
+		<div class="container-fluid" id="scroll-wrapper">     
             <div class="col-xs-12">
                 <div class="scene" id="scene-intro-1">
                     <div id="intro-container-1">    
@@ -62,7 +62,7 @@
                     <div class="left"></div>
                     <div class="right">
                         <div class="spacer"></div>
-                        <div class="intro-container" id="intro-container-3">
+                        <div class="intro-container intro-small" id="intro-container-3">
                             <p>De spor, der er blevet tilbage fra fortiden, kalder vi for kilder.<br>
                             <span id="intro-4-span">Kilder taler ikke bare af sig selv.<br></span>
                             <span id="intro-41-span">Du skal stille kilderne <span class="white-bold">spørgsmål</span> så du kan vurdere, om de kan bruges til at fortælle om det, du ønsker svar på.</span>
@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="brick-scene scene">
-                    <div class="brick-container" id="brick-txt">
+                    <div class="brick-container intro-small" id="brick-txt">
                         <div class="left">
                             <p>Du samler puslespillet om kilden ved at se på de forskellige brikker i forhold til hinanden.</p>    
                         </div>
@@ -134,7 +134,8 @@
 
 <!-- 1. HVAD -->
                 <div class="scene scene-spg" id="scene-2">
-                    <div class="left"> 
+                    <div class="left">
+                        <div class="no-spacer"></div>
                         <div class="source-number" id="no-1">
                             <p>1</p>
                         </div>
@@ -151,6 +152,8 @@
                     </div>
 
                 </div>
+
+                <div class="scene" id="scene-2-1"></div>
 
                 <div class="scene scene-spg" id="scene-3">
                     <div class="left"></div>
@@ -172,7 +175,7 @@
 <!-- 2. HVEM -->
                 <div class="scene scene-spg" id="scene-4">
                     <div class="left">
-
+                        <div class="no-spacer"></div>
                         <div class="source-number" id="no-2">
                             <p>2</p>
                         </div>
@@ -186,6 +189,8 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="scene" id="scene-4-1"></div>
 
                 <div class="scene scene-spg" id="scene-5">
                     <div class="left"></div>
@@ -206,6 +211,7 @@
 <!-- 3. HVORNÅR -->
                 <div class="scene scene-spg" id="hvornaar-1">
                     <div class="left">
+                        <div class="no-spacer"></div>
                         <div class="source-number" id="no-3">
                             <p>3</p>
                         </div>
@@ -219,14 +225,15 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="scene" id="hvornaar-2"></div>
 
-
-                <div class="scene scene-spg" id="hvornaar-2">
+                <div class="scene scene-spg" id="hvornaar-3">
                     <div class="left"></div>
                     <div class="right">
                         <div class="spacer"></div>
                         <div id="expl-container-3">
-                            <div class="explanation">
+                            <div class="explanation" id="expl-3">
                                 <p>Hvornår stammer kilden fra?</p>
                                 <p><span id="hvornaar-txt-1">Er den <span class="white-bold">samtidig</span> med de begivenheder, den omtaler, eller er den lavet på et <span class="white-bold">senere</span> tidspunkt?</span></p>
                                 <p><span id="hvornaar-txt-2">Kender du den historiske kontekst omkring kilden?<br>
@@ -236,11 +243,12 @@
                     </div>
                 </div>
                 <div class="scene"></div>
-                <div class="half-scene"></div>
+                <div class="scene"></div>
 
 <!-- 4. TIL HVEM? -->
-                <div class="scene" id="til-hvem-1">
+                <div class="scene scene-spg" id="til-hvem-1">
                     <div class="left">
+                        <div class="no-spacer"></div>
                         <div class="source-number" id="no-4">
                             <p>4</p>
                         </div>
@@ -256,8 +264,9 @@
                     </div>
                 </div>
 
+                <div class="scene" id="til-hvem-2"></div>
 
-                <div class="scene scene-spg" id="til-hvem-2">
+                <div class="scene scene-spg" id="til-hvem-3">
                     <div class="left"></div>
                     <div class="right">
                         <div class="spacer"></div>
@@ -277,6 +286,7 @@
 <!-- 5. OM HVAD? -->
                 <div class="scene scene-spg" id="om-hvad-1">
                     <div class="left">
+                        <div class="no-spacer"></div>
                         <div class="source-number" id="no-5">
                             <p>5</p>
                         </div>
@@ -292,7 +302,9 @@
                     </div>
                 </div>
 
-                <div class="scene scene-spg" id="om-hvad-2">
+                <div class="scene" id="om-hvad-2"></div>
+
+                <div class="scene scene-spg" id="om-hvad-3">
                     <div class="left"></div>
                     <div class="right">
                         <div class="spacer"></div>
@@ -311,6 +323,7 @@
 <!-- 6. HVILKE VIRKEMIDLER? -->
                 <div class="scene scene-spg" id="virkemidler-1">
                     <div class="left">
+                        <div class="no-spacer"></div>
                         <div class="source-number" id="no-6">
                             <p>6</p>
                         </div>
@@ -327,7 +340,9 @@
                     </div>
                 </div>
 
-                <div class="scene scene-spg" id="virkemidler-2">
+                <div class="scene" id="virkemidler-2"></div>
+
+                <div class="scene scene-spg" id="virkemidler-3">
                     <div class="left"></div>
                     <div class="right">
                         <div class="spacer"></div>
@@ -345,6 +360,7 @@
 <!-- 7. HVILKE KONSEKVENSER? -->
                 <div class="scene" id="konsekvenser-1">
                     <div class="left">
+                        <div class="no-spacer"></div>
                         <div class="source-number" id="no-7">
                             <p>7</p>
                         </div>
@@ -361,7 +377,9 @@
                     </div>
                 </div>
 
-                <div class="scene" id="konsekvenser-2">
+                <div class="scene" id="konsekvenser-2"></div>
+
+                <div class="scene" id="konsekvenser-3">
                     <div class="left"></div>
                     <div class="right">
                         <div class="spacer"></div>
